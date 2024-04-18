@@ -4,8 +4,8 @@ metadata:
   name: consumerms-configmap
   namespace: curiosityevents
 data:
-  SPRING_DATASOURCE_HOST: "10.0.10.214"
-  SPRING_DATASOURCE_PORT: "3306"
+  SPRING_DATASOURCE_HOST: "mysql-db-deployment.curiosityevents.svc.cluster.local"
+  SPRING_DATASOURCE_PORT: "80"
   SPRING_DATASOURCE_DBNAME: "championshipdb"
   KAFKA_BOOTSTRAP_SERVERS: kafka-service.kafka.svc.cluster.local:9092
   KAFKA_PRODUCER_BOOTSTRAP_SERVERS: kafka-service.kafka.svc.cluster.local:9092
