@@ -1,0 +1,27 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: consumerms-trigger
+  namespace: curiosityevents
+spec:
+  schedule: "*/3 * * * *" #scheduled to run every 3 minutes
+  jobTemplate:
+    spec:
+      #ttlSecondsAfterFinished: 180
+      activeDeadlineSeconds: 180
+      template:
+        spec:
+          containers:
+          - name: curl
+            image: radial/busyboxplus:curl
+            imagePullPolicy: IfNotPresent
+            command: [ "/bin/sh", "-c", "--" ]
+            args: [ "curl consumerms-service-clusterip.curiosityevents.svc.cluster.local/trigger/startconsumer" ]
+            #resources:
+            #  requests:
+            #    cpu: "4"
+            #    memory: "1Gi"
+            #  limits:
+            #    cpu: "8"
+            #    memory: "2Gi" 
+          restartPolicy: OnFailure

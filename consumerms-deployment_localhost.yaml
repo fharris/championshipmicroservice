@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: consumerms-deployment
+  namespace: curiosityevents
+spec:
+  selector:
+    matchLabels:
+      app: consumerms
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: consumerms
+    spec:
+      containers:
+      - name: consumerms
+        image: fra.ocir.io/frsxwtjslf35/wikipedia/demo/troubleconsumerms:latest
+        #image: fra.ocir.io/frsxwtjslf35/wikipedia/demo/consumerms:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8090
+        envFrom:
+          - secretRef:
+              name: consumerms-mysql-db-secret
+          - configMapRef:
+              name: consumerms-configmap
+        volumeMounts:
+        - mountPath: /logs-hostpath   
+          name: data-localhost 
+      imagePullSecrets:
+      - name: ocirsecret
+      volumes:
+        - name: data-localhost
+          hostPath:
+            # directory location on host
+            path: /data
+        
