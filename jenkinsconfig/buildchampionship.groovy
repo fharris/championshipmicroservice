@@ -2,7 +2,7 @@
 
 pipeline {
   environment {
-    registry = "172.18.0.6:5000/curiosityms"
+    registry = "172.18.0.6:5000/consumerms"
     imageLatest = ''
      MYSQL_CREDENTIALS = credentials('id-mysql-championship')
     MYSQL_HOST = credentials('id-mysql-host')
