@@ -4,7 +4,7 @@ pipeline {
   environment {
     registry = "172.18.0.6:5000/curiosityms"
     imageLatest = ''
-    MYSQL_CREDENTIALS = credentials('id-mysql')
+     MYSQL_CREDENTIALS = credentials('id-mysql-championship')
     MYSQL_HOST = credentials('id-mysql-host')
     mysql_network_host = '172.18.0.2'
     mysql_port = '3306'
