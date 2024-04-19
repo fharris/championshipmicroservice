@@ -31,7 +31,7 @@ pipeline {
             sh "echo 'KUBERNETES ENDPOINT=$KUBERNETES_ENDPOINT'"
             sh "kubectl apply -f appconfig/consumerms-configmap.yaml"
             sh "kubectl describe configmap consumerms-configmap -n curiosityevents"
-            sh "kubectl rollout restart -f appconfig/consumerms-deployment.yaml"
+            sh "kubectl apply -f appconfig/consumerms-deployment.yaml"
             sh "kubectl get deployments -n curiosityevents"
             sh "kubectl get pods -n curiosityevents"
         }
