@@ -43,6 +43,7 @@ pipeline {
             sh 'kubectl -n curiosityevents create secret generic consumerms-mysql-db-secret --from-literal=SPRING_DATASOURCE_PASSWORD=$MYSQL_CREDENTIALS_PSW --from-literal=SPRING_DATASOURCE_USERNAME=$MYSQL_CREDENTIALS_USR --dry-run=client -o yaml > consumerms-mysql-db-secret.yaml'
             sh "kubectl apply -f consumerms-mysql-db-secret.yaml"
             sh "kubectl apply -f ./appconfig/."
+            sh "kubectl -n curiosityevents rollout restart deployment/consumerms-deployment"
         }
       }
     }
