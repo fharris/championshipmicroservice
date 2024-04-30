@@ -25,14 +25,4 @@ spec:
               name: consumerms-mysql-db-secret
           - configMapRef:
               name: consumerms-configmap
-        volumeMounts:
-        - mountPath: /logs-hostpath   
-          name: data-localhost 
-      imagePullSecrets:
-      - name: ocirsecret
-      volumes:
-        - name: data-localhost
-          hostPath:
-            # directory location on host
-            path: /data
         
