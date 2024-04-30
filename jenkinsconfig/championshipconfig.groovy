@@ -33,7 +33,7 @@ pipeline {
       }
     }
       
-      stage('Configurion in Kubernetes') {
+      stage('Configuring Championship in Kubernetes') {
       steps {
         withKubeConfig( credentialsId: 'jenkins-token-kubernetes', serverUrl: kubernetes_proxy ) {
 	          sh "kubectl apply -f appconfig/consumerms-namespace.yaml"
