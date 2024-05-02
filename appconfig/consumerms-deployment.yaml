@@ -15,8 +15,8 @@ spec:
     spec:
       containers:
       - name: consumerms
-        #image: fra.ocir.io/frsxwtjslf35/wikipedia/demo/consumerms:latest
         image: localhost:5000/consumerms:latest
+        #image: fharris/consumerms:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8090
