@@ -4,7 +4,7 @@ pipeline {
   environment {
     dockerImageBuild = ''
     dockerImageLatest = ''
-    MYSQL_CREDENTIALS = credentials('id-mysql-championship')
+    MYSQL_CREDENTIALS = credentials('id-mysql')
     kubernetes_proxy = "${env.KUBERNETES_ENDPOINT}"
   }
   agent any
