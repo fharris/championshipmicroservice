@@ -13,7 +13,7 @@ You can start by running the housekeeping-k8s script first to clean everything i
 If you just want to see the app running and leave the manual steps to study later just run the following script:
 
 ```
-./deploy-curiosity.sh
+./deploy-championship.sh
 ```
 
 If all goes well, you may jump to step 5 to run the application and ignore the rest of the steps.
