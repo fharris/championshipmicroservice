@@ -1,6 +1,6 @@
 **Manual deployment**
 
-Get the code from GitHub If you haven’t done so, get the code from the repository with the below command:
+Open a new terminal tab and change to a different location. Get the code from GitHub If you haven’t done so, get the code from the repository with the below command:
 ```
 git clone https://github.com/fharris/championshipmicroservice
 ```
