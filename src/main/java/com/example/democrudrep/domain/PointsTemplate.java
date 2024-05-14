@@ -20,7 +20,7 @@ import javax.persistence.*;
 public class PointsTemplate {
 
      // The default score assigned to this card, if not specified.
-     public static final int DEFAULT_SCORE = 2;
+     public static final int DEFAULT_SCORE = 1;
 
      @Id
      //@GeneratedValue
