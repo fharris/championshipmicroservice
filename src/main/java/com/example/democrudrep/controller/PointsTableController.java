@@ -12,7 +12,7 @@ import java.util.List;
  * Controller to get Points table from PointsTable service.
  */
 @RestController
-@RequestMapping("/leaders")
+@RequestMapping("/league")
 @RequiredArgsConstructor
 class PointsTableController {
 
